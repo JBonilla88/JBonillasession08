@@ -1,0 +1,89 @@
+/* border-box fix */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+body {
+  /* remove margin and padding on body */
+  padding: 0;
+  margin: 1;
+  background-image: url("images/skulls.jpg");
+  background-attachment: fixed;
+}
+
+/* Grouping example */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
+}
+
+.wrapper {
+  background-image: url("images/DOTD.jpg");
+  background-attachment: fixed;
+  background-size: 150px;
+  /* grid layout parent */
+  display: grid;
+  /* create 12 col layout */
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* padding on immediate children of wrapper */
+.wrapper>* {
+  padding: 20px;
+}
+
+header {
+  background: rgb(0, 0, 0);
+  /* span all 12 cols*/
+  grid-column: 3 / 10;
+  text-align: center;
+  color: #ffae17;
+}
+
+main {
+  background: #ffffff;
+  /* span 6 cols */
+  grid-column: 3 / 10;
+  color: #ff03b8;
+}
+
+nav {
+  background: rgb(255, 183, 0);
+  /* span 3 cols */
+  grid-column: 1 / 3;
+  color: rgb(255, 255, 255);
+}
+
+aside {
+  background: rgb(255, 183, 0);
+  /* span 3 cols */
+  grid-column: 10 / 13;
+  color: rgb(255, 255, 255);
+}
+
+/* span 2 rows */
+main,
+nav,
+aside {
+  grid-row: 2 / 4;
+}
+
+
+footer {
+  background: rgb(0, 0, 0);
+  /* span all 12 cols*/
+  grid-column: 3 / 10;
+  color: rgb(255, 183, 0);
+}
